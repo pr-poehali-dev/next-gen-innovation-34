@@ -84,7 +84,7 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
           <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection?.(1)}>
             Смотреть программы
           </MagneticButton>
-          <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection?.(6)}>
+          <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection?.(7)}>
             Связаться с кафедрой
           </MagneticButton>
         </div>
