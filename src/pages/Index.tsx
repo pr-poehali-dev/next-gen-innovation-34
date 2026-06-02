@@ -5,6 +5,8 @@ import { WorkSection } from "@/components/sections/work-section"
 import { ServicesSection } from "@/components/sections/services-section"
 import { AboutSection } from "@/components/sections/about-section"
 import { ContactSection } from "@/components/sections/contact-section"
+import { TeachersSection } from "@/components/sections/teachers-section"
+import { PublicationsSection } from "@/components/sections/publications-section"
 import { MagneticButton } from "@/components/magnetic-button"
 import { useRef, useEffect, useState } from "react"
 
@@ -77,7 +79,7 @@ export default function Index() {
       const deltaX = touchStartX.current - touchEndX
 
       if (Math.abs(deltaY) > Math.abs(deltaX) && Math.abs(deltaY) > 50) {
-        if (deltaY > 0 && currentSection < 4) {
+        if (deltaY > 0 && currentSection < 6) {
           scrollToSection(currentSection + 1)
         } else if (deltaY < 0 && currentSection > 0) {
           scrollToSection(currentSection - 1)
@@ -147,7 +149,7 @@ export default function Index() {
         const scrollLeft = scrollContainerRef.current.scrollLeft
         const newSection = Math.round(scrollLeft / sectionWidth)
 
-        if (newSection !== currentSection && newSection >= 0 && newSection <= 4) {
+        if (newSection !== currentSection && newSection >= 0 && newSection <= 6) {
           setCurrentSection(newSection)
         }
 
@@ -226,7 +228,7 @@ export default function Index() {
         </button>
 
         <div className="hidden items-center gap-8 md:flex">
-          {["Главная", "Программы", "Дисциплины", "О кафедре", "Контакты"].map((item, index) => (
+          {["Главная", "Программы", "Дисциплины", "Преподаватели", "Публикации", "О кафедре", "Контакты"].map((item, index) => (
             <button
               key={item}
               onClick={() => scrollToSection(index)}
@@ -244,7 +246,7 @@ export default function Index() {
           ))}
         </div>
 
-        <MagneticButton variant="secondary" onClick={() => scrollToSection(4)}>
+        <MagneticButton variant="secondary" onClick={() => scrollToSection(6)}>
           Поступить
         </MagneticButton>
       </nav>
@@ -261,28 +263,28 @@ export default function Index() {
         <section className="flex min-h-screen w-screen shrink-0 flex-col justify-end px-6 pb-16 pt-24 md:px-12 md:pb-24">
           <div className="max-w-3xl">
             <div className="mb-4 inline-block animate-in fade-in slide-in-from-bottom-4 rounded-full border border-foreground/20 bg-foreground/15 px-4 py-1.5 backdrop-blur-md duration-700">
-              <p className="font-mono text-xs text-foreground/90">Современные технологии</p>
+              <p className="font-mono text-xs text-foreground/90">БГПУ им. М. Акмуллы · Уфа</p>
             </div>
             <h1 className="mb-6 animate-in fade-in slide-in-from-bottom-8 font-sans text-6xl font-light leading-[1.1] tracking-tight text-foreground duration-1000 md:text-7xl lg:text-8xl">
               <span className="text-balance">
-                Цифровое будущее
+                Кафедра культурологии и социально-экономических дисциплин
               </span>
             </h1>
             <p className="mb-8 max-w-xl animate-in fade-in slide-in-from-bottom-4 text-lg leading-relaxed text-foreground/90 duration-1000 delay-200 md:text-xl">
               <span className="text-pretty">
-                Создаем современные веб-приложения и цифровые продукты, которые помогают бизнесу расти и развиваться.
+                Готовим педагогов и исследователей в области гуманитарного знания, культуры и общественных наук.
               </span>
             </p>
             <div className="flex animate-in fade-in slide-in-from-bottom-4 flex-col gap-4 duration-1000 delay-300 sm:flex-row sm:items-center">
               <MagneticButton
                 size="lg"
                 variant="primary"
-                onClick={() => scrollToSection(4)}
+                onClick={() => scrollToSection(5)}
               >
-                Обсудить проект
+                Поступить
               </MagneticButton>
-              <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection(2)}>
-                Наши услуги
+              <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection(1)}>
+                Программы обучения
               </MagneticButton>
             </div>
           </div>
@@ -299,6 +301,8 @@ export default function Index() {
 
         <WorkSection />
         <ServicesSection />
+        <TeachersSection />
+        <PublicationsSection />
         <AboutSection scrollToSection={scrollToSection} />
         <ContactSection />
       </div>
