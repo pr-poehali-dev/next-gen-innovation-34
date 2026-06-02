@@ -15,31 +15,31 @@ export function ServicesSection() {
           }`}
         >
           <h2 className="mb-2 font-sans text-5xl font-light tracking-tight text-foreground md:text-6xl lg:text-7xl">
-            Услуги
+            Дисциплины
           </h2>
-          <p className="font-mono text-sm text-foreground/60 md:text-base">/ Наши компетенции</p>
+          <p className="font-mono text-sm text-foreground/60 md:text-base">/ Ключевые курсы кафедры</p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 md:gap-x-16 md:gap-y-12 lg:gap-x-24">
           {[
             {
-              title: "Веб-разработка",
-              description: "Создание современных веб-приложений любой сложности",
+              title: "Культурология",
+              description: "Теория и история культуры, культурная антропология, семиотика культуры и межкультурная коммуникация",
               direction: "top",
             },
             {
-              title: "UI/UX Дизайн",
-              description: "Проектирование удобных и красивых интерфейсов",
+              title: "Обществознание",
+              description: "Основы социологии, политологии и философии для подготовки педагогов общественных дисциплин",
               direction: "right",
             },
             {
-              title: "Мобильные приложения",
-              description: "Кроссплатформенная разработка для iOS и Android",
+              title: "Экономика",
+              description: "Микро- и макроэкономика, основы предпринимательства и финансовой грамотности",
               direction: "left",
             },
             {
-              title: "Консалтинг",
-              description: "Техническая экспертиза и стратегическое планирование",
+              title: "Право и правоведение",
+              description: "Конституционное и гражданское право, трудовое законодательство и основы правовой культуры",
               direction: "bottom",
             },
           ].map((service, i) => (
