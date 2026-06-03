@@ -1,60 +1,45 @@
 import { useReveal } from "@/hooks/use-reveal"
 import Icon from "@/components/ui/icon"
 
-const conferences = [
+const events = [
   {
-    year: "апрель 2025",
-    title: "Человек. Общество. Культура. Социализация (ЧОКС)",
-    type: "Международная молодёжная научно-практическая",
-    place: "БГПУ им. М. Акмуллы, Уфа",
-    status: "Планируется",
-    note: "XXI выпуск · ежегодная",
-  },
-  {
-    year: "2024",
-    title: "Человек. Общество. Культура. Социализация (ЧОКС)",
-    type: "Международная молодёжная научно-практическая",
+    year: "24 апреля 2026",
+    title: "XXII Международная молодежная конференция «Человек. Общество. Культура. Социализация»",
+    type: "Международная молодёжная",
     place: "БГПУ им. М. Акмуллы, Уфа",
     status: "Состоялась",
-    note: "XX выпуск",
+    note: "Вышел официальный сборник материалов",
   },
   {
-    year: "2023",
-    title: "Человек. Общество. Культура. Социализация (ЧОКС)",
-    type: "Международная молодёжная научно-практическая",
-    place: "БГПУ им. М. Акмуллы, Уфа",
-    status: "Состоялась",
-    note: "XIX выпуск",
-  },
-  {
-    year: "2022",
-    title: "Человек. Общество. Культура. Социализация (ЧОКС)",
-    type: "Международная молодёжная научно-практическая",
-    place: "БГПУ им. М. Акмуллы, Уфа",
-    status: "Состоялась",
-    note: "XVIII выпуск",
-  },
-  {
-    year: "2024",
-    title: "Республиканский форум «Образование глазами современной молодёжи»",
+    year: "23 мая 2026",
+    title: "Республиканская викторина по гуманитарным и экономическим знаниям",
     type: "Республиканская",
-    place: "БГПУ им. М. Акмуллы, Уфа",
+    place: "Центр «Ключевая точка», Уфа",
     status: "Состоялась",
-    note: "",
+    note: "При участии кафедры",
   },
   {
-    year: "2023",
-    title: "Республиканский форум «Образование глазами современной молодёжи»",
-    type: "Республиканская",
+    year: "11–12 апреля 2025",
+    title: "XXI Международная молодежная научно-практическая конференция «Человек. Общество. Культура. Социализация»",
+    type: "Международная молодёжная",
     place: "БГПУ им. М. Акмуллы, Уфа",
     status: "Состоялась",
-    note: "",
+    note: "Секции на рус. и англ. · участники из России, Беларуси, Таджикистана",
+  },
+  {
+    year: "2025–2026",
+    title: "Установочные и итоговые конференции по учебной и педагогической практике",
+    type: "Студенческие мероприятия",
+    place: "БГПУ им. М. Акмуллы, Уфа",
+    status: "Регулярно",
+    note: "Инструктирование и подведение итогов практикантов",
   },
 ]
 
 const statusStyle: Record<string, string> = {
   "Состоялась": "text-foreground/40",
   "Планируется": "text-foreground/90",
+  "Регулярно": "text-foreground/60",
 }
 
 export function ConferencesSection() {
@@ -72,13 +57,13 @@ export function ConferencesSection() {
           }`}
         >
           <h2 className="mb-2 font-sans text-5xl font-light tracking-tight text-foreground md:text-6xl lg:text-7xl">
-            Конференции
+            Мероприятия
           </h2>
           <p className="font-mono text-sm text-foreground/60 md:text-base">/ Научная жизнь кафедры</p>
         </div>
 
         <div className="space-y-0">
-          {conferences.map((conf, i) => (
+          {events.map((conf, i) => (
             <div
               key={i}
               className={`group flex items-start gap-4 border-b border-foreground/10 py-5 transition-all duration-700 hover:border-foreground/20 md:gap-8 md:py-6 ${
@@ -86,7 +71,7 @@ export function ConferencesSection() {
               }`}
               style={{ transitionDelay: `${i * 70}ms` }}
             >
-              <span className="w-10 shrink-0 font-mono text-xs text-foreground/30 md:text-sm">{conf.year}</span>
+              <span className="w-28 shrink-0 font-mono text-xs text-foreground/30 md:w-36 md:text-sm">{conf.year}</span>
 
               <div className="min-w-0 flex-1">
                 <h3 className="mb-1 font-sans text-sm font-light leading-snug text-foreground transition-transform duration-300 group-hover:translate-x-1 md:text-base lg:text-lg">

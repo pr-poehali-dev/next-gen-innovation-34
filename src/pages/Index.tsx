@@ -229,7 +229,7 @@ export default function Index() {
         </button>
 
         <div className="hidden items-center gap-8 md:flex">
-          {["Главная", "Программы", "Дисциплины", "Преподаватели", "Публикации", "Конференции", "О кафедре", "Контакты"].map((item, index) => (
+          {["Главная", "Программы", "Дисциплины", "Преподаватели", "Публикации", "Мероприятия", "О кафедре", "Контакты"].map((item, index) => (
             <button
               key={item}
               onClick={() => scrollToSection(index)}
