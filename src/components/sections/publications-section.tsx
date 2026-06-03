@@ -1,5 +1,6 @@
 import { useReveal } from "@/hooks/use-reveal"
 import Icon from "@/components/ui/icon"
+import { QRCodeSVG } from "qrcode.react"
 
 const publications = [
   {
@@ -71,7 +72,8 @@ export function PublicationsSection() {
           <p className="font-mono text-sm text-foreground/60 md:text-base">/ Научные издания кафедры</p>
         </div>
 
-        <div className="space-y-0">
+        <div className="flex gap-12 lg:gap-20">
+          <div className="min-w-0 flex-1 space-y-0">
           {publications.map((pub, i) => (
             <div
               key={i}
@@ -94,6 +96,28 @@ export function PublicationsSection() {
               </div>
             </div>
           ))}
+          </div>
+
+          <div
+            className={`hidden shrink-0 flex-col items-center justify-center gap-4 lg:flex transition-all duration-700 ${
+              isVisible ? "translate-x-0 opacity-100" : "translate-x-12 opacity-0"
+            }`}
+            style={{ transitionDelay: "400ms" }}
+          >
+            <div className="rounded-lg bg-foreground/10 p-3 backdrop-blur-sm">
+              <QRCodeSVG
+                value="https://lib.bspu.ru"
+                size={120}
+                bgColor="transparent"
+                fgColor="rgba(255,255,255,0.85)"
+                level="M"
+              />
+            </div>
+            <div className="text-center">
+              <p className="font-mono text-xs text-foreground/60">Библиотека кафедры</p>
+              <p className="font-mono text-xs text-foreground/30">lib.bspu.ru</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
