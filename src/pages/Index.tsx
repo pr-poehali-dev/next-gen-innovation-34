@@ -4,7 +4,6 @@ import { GrainOverlay } from "@/components/grain-overlay"
 import { WorkSection } from "@/components/sections/work-section"
 import { AboutSection } from "@/components/sections/about-section"
 import { ContactSection } from "@/components/sections/contact-section"
-import { TeachersSection } from "@/components/sections/teachers-section"
 import { PublicationsSection } from "@/components/sections/publications-section"
 import { ConferencesSection } from "@/components/sections/conferences-section"
 import { MagneticButton } from "@/components/magnetic-button"
@@ -79,7 +78,7 @@ export default function Index() {
       const deltaX = touchStartX.current - touchEndX
 
       if (Math.abs(deltaY) > Math.abs(deltaX) && Math.abs(deltaY) > 50) {
-        if (deltaY > 0 && currentSection < 6) {
+        if (deltaY > 0 && currentSection < 5) {
           scrollToSection(currentSection + 1)
         } else if (deltaY < 0 && currentSection > 0) {
           scrollToSection(currentSection - 1)
@@ -149,7 +148,7 @@ export default function Index() {
         const scrollLeft = scrollContainerRef.current.scrollLeft
         const newSection = Math.round(scrollLeft / sectionWidth)
 
-        if (newSection !== currentSection && newSection >= 0 && newSection <= 6) {
+        if (newSection !== currentSection && newSection >= 0 && newSection <= 5) {
           setCurrentSection(newSection)
         }
 
@@ -228,7 +227,7 @@ export default function Index() {
         </button>
 
         <div className="hidden items-center gap-8 md:flex">
-          {["Главная", "Программы", "Преподаватели", "Публикации", "Мероприятия", "О кафедре", "Контакты"].map((item, index) => (
+          {["Главная", "Программы", "Публикации", "Мероприятия", "О кафедре", "Контакты"].map((item, index) => (
             <button
               key={item}
               onClick={() => scrollToSection(index)}
@@ -246,7 +245,7 @@ export default function Index() {
           ))}
         </div>
 
-        <MagneticButton variant="secondary" onClick={() => scrollToSection(6)}>
+        <MagneticButton variant="secondary" onClick={() => scrollToSection(5)}>
           Поступить
         </MagneticButton>
       </nav>
@@ -300,7 +299,6 @@ export default function Index() {
         </section>
 
         <WorkSection />
-        <TeachersSection />
         <PublicationsSection />
         <ConferencesSection />
         <AboutSection scrollToSection={scrollToSection} />
