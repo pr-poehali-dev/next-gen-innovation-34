@@ -50,7 +50,7 @@ export function ContactSection() {
 
             <div className="space-y-4 md:space-y-8">
               <a
-                href="mailto:bspu@bspu.ru"
+                href="mailto:benin@lenta.ru"
                 className={`group block transition-all duration-700 ${
                   isVisible ? "translate-x-0 opacity-100" : "-translate-x-16 opacity-0"
                 }`}
@@ -61,7 +61,7 @@ export function ContactSection() {
                   <span className="font-mono text-xs text-foreground/60">Email</span>
                 </div>
                 <p className="text-base text-foreground transition-colors group-hover:text-foreground/70 md:text-2xl">
-                  bspu@bspu.ru
+                  benin@lenta.ru
                 </p>
               </a>
 
@@ -75,7 +75,7 @@ export function ContactSection() {
                   <Icon name="MapPin" className="h-3 w-3 text-foreground/60" />
                   <span className="font-mono text-xs text-foreground/60">Адрес</span>
                 </div>
-                <p className="text-base text-foreground md:text-2xl">Уфа, ул. Октябрьской революции, 3а</p>
+                <p className="text-base text-foreground md:text-2xl">Уфа, ул. Октябрьской революции, 55а</p>
               </div>
 
               <div
@@ -88,7 +88,7 @@ export function ContactSection() {
                   <Icon name="Phone" className="h-3 w-3 text-foreground/60" />
                   <span className="font-mono text-xs text-foreground/60">Телефон</span>
                 </div>
-                <p className="text-base text-foreground md:text-2xl">+7 (347) 272-58-58</p>
+                <p className="text-base text-foreground md:text-2xl">+7 (347) 246-20-49</p>
               </div>
 
               <div
